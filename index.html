@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Příkazy do gitu</title>
+</head>
+
+<body class="bg-primary">
+    <header class="bg-primary-header text-center">
+        <h1> Příkazy do gitu<img src="./images/Git-Icon-1788C.png" alt="Ikonka Gitu" width="160" height="160"></h1>
+    </header>
+    <main>
+
+        <h2>Příkazy pro práci s repozitáři</h2>
+        <div class="text">
+            <h3>pro vytváření a nastavení lokálního repozitáře</h3>
+            <p>
+                git config --local user.name "IT1810"
+            </p>
+            <p>
+                git config --local user.email "7cezar97@gmail.cz"
+            </p>
+            <p class="text-normal">
+                Nastaví uživatelský účet pro lokální repozitář, vhodné když pracuje několik lidí na jednom
+                účtu(počítači).
+            </p>
+            <p>
+                git init
+            </p>
+            <p class="text-normal">
+                Vytvoření lokálního repozitáře (.git).
+            </p>
+            <p>
+                git --version
+            </p>
+            <p class="text-normal">
+                Ukáže verzi verzovacího systému Git.
+            </p>
+            <p>
+                git config --global http.proxy http://192.168.1.1:800
+            </p>
+            <p class="text-normal">
+                Nastavení procházení Git Bashe přes proxy server(což je pro všechny repozitáře).
+            </p>
+            <p>
+                git config --global http.sslverify "false"
+            </p>
+            <p class="text-normal">
+                Zrušení požadování SSL certifikátu pro všechny repozitáře, pokud je vás na jednom účtu více (a nemáte
+                co uživatel to účet) a nemáte uložený certifikát s vlasním uživatelským profilem.
+            </p>
+            <p>
+                git config --global user.email "7cezar97@gmail.cz"
+            </p>
+            <p>
+                git config --global user.name "IT1810"
+            </p>
+            <p class="text-normal">
+                Nastaví uživatelský účet pro všechny repozitáře, vhodné když pracuje jeden člověk na jednom
+                účtu(počítači).
+            </p>
+            <p>
+
+            </p>
+            <p class="text-normal">
+
+            </p>
+            <p>
+
+            </p>
+            <p class="text-normal">
+
+            </p>
+        </div>
+        <div class="text">
+            <h3>pro práci s větvemi</h3>
+            <p>
+                git checkout --orphan vetev
+            </p>
+            <p class="text-normal">
+                Vytvoří novou větev nezávislou na všech ostatních a přepne se do ní.
+            </p>
+            <p>
+                git checkout -b vetev
+            </p>
+            <p class="text-normal">
+                Vytvoří novou větev.
+            </p>
+            <p>
+                git checkout vetev
+            </p>
+            <p class="text-normal">
+                Přepne na větev vetev.
+            </p>
+            <p>
+                git merge vetev
+            </p>
+            <p class="text-normal">
+                Sloučí větve s větví vetev.
+            </p>
+        </div>
+        <div class="text">
+            <h3>pro práci s lokálním repozitářem</h3>
+            <p>
+                git status
+            </p>
+            <p class="text-normal">
+                Vypíše co bylo přidané přikazem add.
+            </p>
+            <p>
+                git add -all
+            </p>
+            <p>
+                git add .
+            </p>
+            <p class="text-normal">
+                Přidá všechno do "stage area"(oblast připravená na commit z workdirectory(pracovní složky) ).
+            </p>
+            <p>
+                git add README.md
+            </p>
+            <p class="text-normal">
+                Přidá v tomto případě jeden soubor (README.md) do "stage area"
+            </p>
+            <p>
+                git add *.jpg, *.png
+            </p>
+            <p class="text-normal">
+                Přidá v tomto případě všechny soubory s připonami .jpg a .png do "stage area"
+            </p>
+            <p>
+                git reset
+            </p>
+            <p class="text-normal">
+                Vymaže všechno z "stage area"
+            </p>
+            <p>
+                git reset *.jpg
+            </p>
+            <p class="text-normal">
+                Vymaže jenom soubory s připonou .jpg z "stage area".
+            </p>
+        </div>
+        <div class="text">
+            <h3>práce mezi lokálním repozitářem a vzdáleným</h3>
+            <p>
+                git remote add origin https://github.com/IT1810/novy.git
+            </p>
+            <p class="text-normal">
+                Přidá vzdálený repozitář pod větví origin (běžné pojmenování větve) z učtu na Githubu.
+            </p>
+            <p>
+                git push -u origin master
+            </p>
+            <p class="text-normal">
+                Aktualizuje vzdálený repozitář (origin) podle lokálního repozitáře (master).
+            </p>
+            <p>
+                git push -f origin master
+            </p>
+            <p class="text-normal">
+                Pokud nastanou nějaké chyby při aktualizaci, tak to zaaranžuje chyby tak, aby jste mohl použit přikaz
+                push s ostatními( nebo samostatný ).
+            </p>
+            <p>
+                git pull origin master
+            </p>
+            <p class="text-normal">
+                Dělá to stejné jako "git push -u origin master, ale naopak."
+            </p>
+            <p>
+                git log
+            </p>
+            <p class="text-normal">
+                Vypíše jednotlivé commity, které jste provedli s lokálním repozitářem.
+            </p>
+            <p>
+                git log --oneline
+            </p>
+            <p class="text-normal">
+                Vypíše něco podobného jako "git log, ale zkráceně a na jeden řádek."
+            </p>
+            <p>
+                git clone https://github.com/IT1810/novy.git
+            </p>
+            <p class="text-normal">
+                Vytvoří kopii vzdáleného repozitáře na vašem počitači.
+            </p>
+        </div>
+        <h2>Instalace aplikace Git (bonus)</h2>
+        <div class="text">
+            <div class="sloupce">
+                <img class="center" src="images/Git_inst_01.png" alt="">
+                <img class="center" src="images/Git_inst_02.png" alt="">
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Dejte další.
+                </p>
+                <p class="text-normall">
+                    Napište absolutní cestu kde to chcete nainstalovat.
+                </p>
+            </div>
+            <div class="sloupce">
+                <img class="center" src="images/git_components.png" alt="">
+                <img class="center" src="images/Git_inst_04.png" alt="">
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Vyberte componenty gitu.
+                </p>
+                <p class="text-normall">
+                    Nechejte vychozí.
+                </p>
+            </div>
+            <div class="sloupce">
+                <img class="center" src="images/Git_inst_05.png" alt="">
+                <img class="center" src="images/git_ssl.png" alt="">
+                
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Vyberte textový editor.
+                </p>
+                <p class="text-normall">
+                    Vyberte knihovnu OpenSSL nebo Windows pro certifikáty.
+                </p>
+            </div>
+            <div class="sloupce">
+                <img class="center" src="images/Git_inst_06.png" alt="">
+                <img class="center" src="images/Git_inst_07.png" alt="">
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Vyberte 2 možnost mužete použivat git bez rozbití cmd.exe.
+                </p>
+                <p class="text-normall">
+                    Vyberte zalomení řádku Windows, Unix nebo vychozí.
+                </p>
+            </div>
+            <div class="sloupce">
+                <img class="center" src="images/Git_inst_08.png" alt="">
+                <img class="center" src="images/Git_inst_09.png" alt="">
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Vyberte konzoli MinTTy vám umožní používat git bez problemu s kodováním textu.
+                </p>
+                <p class="text-normall">
+                    Vyberte extra možnosti.
+                </p>
+            </div>
+            <div class="sloupce">
+                <img class="center" src="images/Git_inst_10.png" alt="">
+                <img class="center" src="images/Git_launch.png" alt="">
+            </div>
+            <div class="sloupce">
+                <p class="text-normall">
+                    Nainstalujte.
+                </p>
+                <p class="text-normall">
+                    Spustit Git.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; Tomáš Kuča IT1
+    </footer>
+</body>
+
+</html>
